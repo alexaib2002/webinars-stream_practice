@@ -44,12 +44,12 @@ public class Main {
 
     private static void printMaxByProvince() {
         System.out.println("TEMPERATURA MAXIMA DE CADA PROVINCIA");
-        PrintUtils.printMap(weatherService.getTopTempGroupedByProvince(true));
+        PrintUtils.printOptMap(weatherService.getTopTempGroupedByProvince(true));
     }
 
     private static void printMinByProvince() {
         System.out.println("TEMPERATURA MINIMA DE CADA PROVINCIA");
-        PrintUtils.printMap(weatherService.getTopTempGroupedByProvince(true));
+        PrintUtils.printOptMap(weatherService.getTopTempGroupedByProvince(true));
     }
 
     private static void printAverageByProvince() {
@@ -58,7 +58,8 @@ public class Main {
     }
 
     private static void printAllByProvince(String province) {
-
+        System.out.println("TEMPERATURAS TOTALES DE " + province);
+        PrintUtils.printList(weatherService.getTempByProvince(province));
     }
 
 }
